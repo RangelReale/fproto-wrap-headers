@@ -22,7 +22,7 @@ func (t *TypeConverterPlugin_Headers) GetTypeConverter(tp *fdep.DepType) fproto_
 type TypeConverter_Headers struct {
 }
 
-func (t *TypeConverter_Headers) TypeName(g *fproto_gowrap.Generator, tntype fproto_gowrap.TypeConverterTypeNameType) string {
+func (t *TypeConverter_Headers) TypeName(g *fproto_gowrap.GeneratorFile, tntype fproto_gowrap.TypeConverterTypeNameType) string {
 	return "map[string][]string"
 }
 
@@ -30,7 +30,7 @@ func (t *TypeConverter_Headers) IsPointer() bool {
 	return true
 }
 
-func (t *TypeConverter_Headers) GenerateImport(g *fproto_gowrap.Generator, varSrc string, varDest string, varError string) (checkError bool, err error) {
+func (t *TypeConverter_Headers) GenerateImport(g *fproto_gowrap.GeneratorFile, varSrc string, varDest string, varError string) (checkError bool, err error) {
 	alias := g.Dep("github.com/RangelReale/fproto-wrap-headers/gowrap/ptypes", "ptypes_headers")
 
 	g.P("if ", varSrc, " != nil {")
@@ -44,7 +44,7 @@ func (t *TypeConverter_Headers) GenerateImport(g *fproto_gowrap.Generator, varSr
 	return false, nil
 }
 
-func (t *TypeConverter_Headers) GenerateExport(g *fproto_gowrap.Generator, varSrc string, varDest string, varError string) (checkError bool, err error) {
+func (t *TypeConverter_Headers) GenerateExport(g *fproto_gowrap.GeneratorFile, varSrc string, varDest string, varError string) (checkError bool, err error) {
 	alias := g.Dep("github.com/RangelReale/fproto-wrap-headers/gowrap/ptypes", "ptypes_headers")
 
 	g.P("if ", varSrc, " != nil {")

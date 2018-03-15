@@ -1,0 +1,10 @@
+syntax = "proto3";
+package fproto_wrap_headers;
+option go_package = "github.com/RangelReale/fproto-wrap-headers/gowrap/gwproto";
+
+message Headers {
+    message Values {
+        repeated string values = 1;
+    }
+    map<string, Values> headers = 1;
+}

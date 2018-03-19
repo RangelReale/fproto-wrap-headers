@@ -5,6 +5,10 @@ import (
 	"github.com/RangelReale/fproto/fdep"
 )
 
+const (
+	TCID_HEADERS string = "f7e54dc0-185b-4bb8-8e70-f77f5acb06bc"
+)
+
 // Converts between fproto_gowrap_headers.Headers and map[string][]string
 type TypeConverterPlugin_Headers struct {
 }
@@ -20,6 +24,10 @@ func (t *TypeConverterPlugin_Headers) GetTypeConverter(tp *fdep.DepType) fproto_
 
 // Converter
 type TypeConverter_Headers struct {
+}
+
+func (t *TypeConverter_Headers) TCID() string {
+	return TCID_HEADERS
 }
 
 func (t *TypeConverter_Headers) TypeName(g *fproto_gowrap.GeneratorFile, tntype fproto_gowrap.TypeConverterTypeNameType) string {

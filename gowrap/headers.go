@@ -30,7 +30,7 @@ func (t *TypeConverter_Headers) TCID() string {
 	return TCID_HEADERS
 }
 
-func (t *TypeConverter_Headers) TypeName(g *fproto_gowrap.GeneratorFile, tntype fproto_gowrap.TypeConverterTypeNameType) string {
+func (t *TypeConverter_Headers) TypeName(g *fproto_gowrap.GeneratorFile, tntype fproto_gowrap.TypeNameType) string {
 	return "map[string][]string"
 }
 

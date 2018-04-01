@@ -14,8 +14,8 @@ type TypeConverterPlugin_Headers struct {
 }
 
 func (t *TypeConverterPlugin_Headers) GetTypeConverter(tp *fdep.DepType) fproto_gowrap.TypeConverter {
-	if tp.FileDep.FilePath == "github.com/RangelReale/fproto-wrap-headers/headers.proto" &&
-		tp.FileDep.ProtoFile.PackageName == "fproto_wrap_headers" &&
+	if tp.DepFile.FilePath == "github.com/RangelReale/fproto-wrap-headers/headers.proto" &&
+		tp.DepFile.ProtoFile.PackageName == "fproto_wrap_headers" &&
 		tp.Name == "Headers" {
 		return &TypeConverter_Headers{}
 	}

@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	TCID_HEADERS string = "f7e54dc0-185b-4bb8-8e70-f77f5acb06bc"
+	TCID_HEADERS fproto_gowrap.TCID = "f7e54dc0-185b-4bb8-8e70-f77f5acb06bc"
 )
 
 // Converts between fproto_gowrap_headers.Headers and map[string][]string
@@ -26,7 +26,7 @@ func (t *TypeConverterPlugin_Headers) GetTypeConverter(tp *fdep.DepType) fproto_
 type TypeConverter_Headers struct {
 }
 
-func (t *TypeConverter_Headers) TCID() string {
+func (t *TypeConverter_Headers) TCID() fproto_gowrap.TCID {
 	return TCID_HEADERS
 }
 

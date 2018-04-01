@@ -39,7 +39,7 @@ func (t *TypeConverter_Headers) IsPointer() bool {
 }
 
 func (t *TypeConverter_Headers) GenerateImport(g *fproto_gowrap.GeneratorFile, varSrc string, varDest string, varError string) (checkError bool, err error) {
-	alias := g.Dep("github.com/RangelReale/fproto-wrap-headers/gowrap/ptypes", "ptypes_headers")
+	alias := g.DeclDep("github.com/RangelReale/fproto-wrap-headers/gowrap/ptypes", "ptypes_headers")
 
 	g.P("if ", varSrc, " != nil {")
 	g.In()
@@ -53,7 +53,7 @@ func (t *TypeConverter_Headers) GenerateImport(g *fproto_gowrap.GeneratorFile, v
 }
 
 func (t *TypeConverter_Headers) GenerateExport(g *fproto_gowrap.GeneratorFile, varSrc string, varDest string, varError string) (checkError bool, err error) {
-	alias := g.Dep("github.com/RangelReale/fproto-wrap-headers/gowrap/ptypes", "ptypes_headers")
+	alias := g.DeclDep("github.com/RangelReale/fproto-wrap-headers/gowrap/ptypes", "ptypes_headers")
 
 	g.P("if ", varSrc, " != nil {")
 	g.In()
